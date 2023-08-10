@@ -1,0 +1,33 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+
+
+<div class="outer">
+  <div class="inner">
+
+    <h4 style="text-align: center">Login</h4>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput type="email" placeholder="enter your email">
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" matInput type="password" placeholder="enter your password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm?.invalid" class="submit-login">Login</button>
+
+    <hr>
+    <p class="text">Or sign in with</p>
+    <div class="social-outer">
+      <button mat-fab color="accent">FB</button>
+      <button mat-fab color="accent" (click)="GoogleAuth()" type="button">Google</button>
+      <button mat-fab color="accent">Git</button>
+      <button mat-fab color="accent" routerLink="/security/signup">reg</button>
+
+    </div>
+
+  </div>
+</div>
+</form>
